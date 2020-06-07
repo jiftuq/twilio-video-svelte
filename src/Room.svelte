@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import Video from "twilio-video";
   import Participant from "./Participant.svelte";
-  export let token;
+  export let token ;
   export let roomName;
   export let destroyToken;
   let room = null;
@@ -23,6 +23,7 @@
   };
 
   onMount(async () => {
+    console.log(token);
     room = await Video.connect(token, { name: roomName });
     participants = Array.from(room.participants.values());
     room.on("participantConnected", participant => {
