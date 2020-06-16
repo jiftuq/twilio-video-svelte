@@ -1,17 +1,21 @@
 <script>
   import Room from "./Room.svelte";
+  
   let identity = "";
   let roomName = "";
   let token = null;
 
+  
   const handleSubmit = async () => {
     const data = await fetch("TOKEN_URL", {
       method: "POST",
+      
       body: JSON.stringify({
         identity,
         room: roomName
       }),
       headers: {
+        
         "Content-Type": "application/json"
       }
     }).then(res => res.json());
