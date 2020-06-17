@@ -7,7 +7,7 @@
 
   
   const handleSubmit = async () => {
-    const data = await fetch("process.env.TOKEN_URL", {
+    const data = await fetch("TOKEN_URL", {
       method: "POST",
       
       body: JSON.stringify({
